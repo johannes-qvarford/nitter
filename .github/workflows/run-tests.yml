@@ -5,7 +5,7 @@ on:
     paths-ignore:
       - "*.md"
     branches-ignore:
-      - master
+      - jq
   workflow_call:
 
 jobs:
