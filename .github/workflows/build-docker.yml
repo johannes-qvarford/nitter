@@ -15,7 +15,7 @@ jobs:
   #tests:
   #  uses: ./.github/workflows/run-tests.yml
   build-docker-amd64:
-  #  needs: [tests]
+    needs: []
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
