@@ -9,6 +9,14 @@
     }
 }
 
+.conversation summary {
+    padding: 20px 0;
+    margin: 20px auto;
+    text-align: center;
+    background-color: var(--bg_panel);
+    font-size: 18px;
+}
+
 .main-thread {
     margin-bottom: 20px;
     background-color: var(--bg_panel);
@@ -17,14 +25,6 @@
 .main-tweet, .replies {
     padding-top: 50px;
     margin-top: -50px;
-}
-
-.main-tweet, summary {
-    padding: 20px 0;
-    margin: 20px auto;
-    text-align: center;
-    background-color: var(--bg_panel);
-    font-size: 18px;
 }
 
 .main-tweet .tweet-content {
