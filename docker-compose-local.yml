@@ -6,7 +6,7 @@ services:
     build: .
     container_name: nitter
     ports:
-      - "127.0.0.1:11011:8080" # Replace with "8080:8080" if you don't use a reverse proxy
+      - "11011:8080" # Replace with "8080:8080" if you don't use a reverse proxy
     volumes:
       - ./nitter.example-local.conf:/src/nitter.conf:Z,ro
     depends_on:

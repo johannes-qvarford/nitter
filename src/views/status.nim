@@ -29,13 +29,16 @@ proc renderReplyThread(thread: Chain; prefs: Prefs; path: string): VNode =
       renderMoreReplies(thread)
 
 proc renderReplies*(replies: Result[Chain]; prefs: Prefs; path: string): VNode =
-  buildHtml(tdiv(class="replies", id="r")):
-    for thread in replies.content:
-      if thread.content.len == 0: continue
-      renderReplyThread(thread, prefs, path)
+  buildHtml(details()):
+    summary():
+      text "Replies"
+    tdiv(class="replies", id="r"):
+      for thread in replies.content:
+        if thread.content.len == 0: continue
+        renderReplyThread(thread, prefs, path)
 
-    if replies.bottom.len > 0:
-      renderMore(Query(), replies.bottom, focus="#r")
+      if replies.bottom.len > 0:
+        renderMore(Query(), replies.bottom, focus="#r")
 
 proc renderConversation*(conv: Conversation; prefs: Prefs; path: string): VNode =
   let hasAfter = conv.after.content.len > 0
