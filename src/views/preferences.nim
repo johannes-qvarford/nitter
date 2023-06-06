@@ -2,6 +2,7 @@
 import tables, macros, strutils
 import karax/[karaxdsl, vdom]
 
+import renderutils
 import ../types, ../prefs_impl
 
 macro renderPrefs*(): untyped =
