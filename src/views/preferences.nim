@@ -34,4 +34,15 @@ macro renderPrefs*(): untyped =
 proc renderPreferences*(prefs: Prefs; path: string; themes: seq[string]): VNode =
   buildHtml(tdiv(class="overlay-panel")):
     fieldset(class="preferences"):
-      text "Not supported"
+      form(`method`="post", action="/saveprefs", autocomplete="off"):
+        refererField path
+
+        renderPrefs()
+
+        h4(class="note"):
+          text "Preferences are stored client-side using cookies without any personal information."
+
+        button(`type`="submit", class="pref-submit"):
+          text "Save preferences"
+
+      buttonReferer "/resetprefs", "Reset preferences", path, class="pref-reset"

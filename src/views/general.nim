@@ -33,6 +33,7 @@ proc renderNavbar(cfg: Config; req: Request; rss, canonical: string): VNode =
           icon "rss-feed", title="RSS Feed", href=rss
         a(href="https://liberapay.com/zedeus"): verbatim lp
         icon "info", title="About", href="/about"
+        icon "cog", title="Preferences", href=("/settings?referer=" & encodeUrl(path))
 
 proc renderHead*(prefs: Prefs; cfg: Config; req: Request; titleText=""; desc="";
                  video=""; images: seq[string] = @[]; banner=""; ogTitle="";
